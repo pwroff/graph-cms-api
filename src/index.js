@@ -6,15 +6,19 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import Mongoose from 'mongoose';
 import http from 'http';
+import graphql from './middlewares/graphql';
 const {config} = require('../package.json');
 const PORT = process.env.PORT || config.port || 3020;
 const app = express();
 const server = http.Server(app);
-
 global.logger = console;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+const graphqlApi = graphql({});
+
+app.use('/', graphqlApi);
 
 server.listen(PORT, () => {
     logger.log(`Server listening on port ${PORT}`);

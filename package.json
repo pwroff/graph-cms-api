@@ -32,13 +32,12 @@
     "babel-cli": "^6.22.2",
     "babel-plugin-inline-import": "^2.0.4",
     "babel-preset-latest": "^6.22.0",
-    "eslint": "^3.14.1",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint": "^3.14.1"
   },
   "scripts": {
     "build": "babel src -d dist",
     "serve": "node dist/index.js",
-    "devel": "nodemon ./src/main.js --exec babel-node",
+    "devel": "./node_modules/nodemon/bin/nodemon.js ./src/index.js --exec ./node_modules/babel-cli/bin/babel-node.js",
     "start": "npm run build && npm run serve",
     "lint": "./node_modules/.bin/eslint src/ *.js"
   },

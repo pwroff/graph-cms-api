@@ -1,0 +1,16 @@
+# the schema allows the following query:
+type Query {
+  posts: [String]
+}
+
+# this schema allows the following mutation:
+type Mutation {
+  upvotePost (
+    postId: Int!
+  ): Int
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
