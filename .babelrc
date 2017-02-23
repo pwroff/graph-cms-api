@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "latest"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    ["babel-plugin-inline-import", {
+      "extensions": [".graphql",".graphqls"]
+    }]
+  ],
+  "only": ["*.js"]
+}

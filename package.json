@@ -1,0 +1,50 @@
+{
+  "name": "graph-cms-api",
+  "author": "Leonid Lazaryev",
+  "version": "v0.0.0",
+  "description": "Graphql API for graphql cms project",
+  "license": "MIT",
+  "homepage": "https://github.com/pwroff/graph-cms-api",
+  "repository": "https://github.com/pwroff/graph-cms-api",
+  "contributors": [
+    "Leonid Lazaryev <leonidlazaryev@gmail.com>"
+  ],
+  "preferGlobal": false,
+  "engines": {
+    "node": ">= 7.0.0"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "graphql": "^0.8.1",
+    "graphql-server-express": "^0.5.2",
+    "graphql-tools": "^0.9.2",
+    "mongoose": "^4.8.1",
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-plugin-inline-import": "^2.0.4",
+    "babel-preset-latest": "^6.22.0",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "serve": "node dist/index.js",
+    "devel": "nodemon ./src/main.js --exec babel-node",
+    "start": "npm run build && npm run serve",
+    "lint": "./node_modules/.bin/eslint src/ *.js"
+  },
+  "config": {
+    "database": {
+      "host": "127.0.0.1:27017/cmsapi"
+    }
+  }
+}
