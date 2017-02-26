@@ -17,8 +17,6 @@ try {
         logger: log
     });
 } catch (e) {
-
-
     log.error('Schema error', e.message);
 }
 

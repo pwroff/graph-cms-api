@@ -11,6 +11,7 @@ const {config} = require('../package.json');
 const PORT = process.env.PORT || config.port || 3020;
 const app = express();
 const server = http.Server(app);
+
 global.logger = console;
 
 app.use(bodyParser.urlencoded({extended: true}));

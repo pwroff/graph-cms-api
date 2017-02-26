@@ -1,13 +1,52 @@
+type User {
+    _id: ID
+    username: String
+    email: String
+    role: String
+    createdAt: String
+}
+
+type Division {
+    _id: ID
+    title: String
+    description: String
+    entries: [Entry]
+    createdAt: String
+}
+
+type Entry {
+    _id: ID
+    title: String
+    description: String
+    division: Division
+    author: User
+    createdAt: String
+    updatedAt: String
+}
+
 # the schema allows the following query:
 type Query {
-  posts: [String]
+    users: [User]
+    divisions: [Division]
 }
 
 # this schema allows the following mutation:
 type Mutation {
-  upvotePost (
-    postId: Int!
-  ): Int
+    createUser (
+    username: String!
+    email: String!
+    ): User
+    createDivision(
+    title: String!
+    description: String!
+    ): Division
+    upsertEntry(
+    divisionId: ID!
+    userId: ID!
+    title: String!
+    description: String
+    _id: ID
+    ): Entry
 }
 
 schema {
