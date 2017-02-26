@@ -39,7 +39,7 @@
     "serve": "node dist/index.js",
     "devel": "./node_modules/nodemon/bin/nodemon.js ./src/index.js --exec ./node_modules/babel-cli/bin/babel-node.js",
     "start": "npm run build && npm run serve",
-    "lint": "./node_modules/.bin/eslint src/ *.js"
+    "lint": "./node_modules/.bin/eslint  --fix --ext js --ext jsx src"
   },
   "config": {
     "database": {
