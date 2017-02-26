@@ -32,13 +32,15 @@ type Query {
 
 # this schema allows the following mutation:
 type Mutation {
-    createUser (
+    upsertUser(
     username: String!
     email: String!
+    _id: ID
     ): User
-    createDivision(
+    upsertDivision(
     title: String!
     description: String!
+    _id: ID
     ): Division
     upsertEntry(
     divisionId: ID!
